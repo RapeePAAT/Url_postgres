@@ -49,11 +49,11 @@ app.post('/api/creat-short-url',async (req,res)=>{
 
 });
 app.post("/api/get-one-row", async (req,res)=>{
-    const {original_url} = await req.body;
-    console.log(original_url)
+    const originalURL = await req.body.orginal_url;
+    console.log(originalURL)
     console.log(req.body)
     try{
-        const One = await db.query("SELECT * FROM public.url WHERE orginal_url=$1 ",[original_url]);
+        const One = await db.query("SELECT * FROM public.url WHERE orginal_url=$1 ",[originalURL]);
         if(One.rows.length > 0){
             console.log("You Recive One RO@ Data")
             res.status(200).json(One.rows[0])
