@@ -8,8 +8,29 @@
     ],
     "routes": [
       {
+        "src": "/api/creat-short-url",
+        "dest": "/server.js"
+      },
+      {
+        "src": "/api/get-one-row",
+        "dest": "/server.js"
+      },
+      {
+        "src": "/api/get-all-url",
+        "dest": "/server.js"
+      },
+      {
+        "src": "/:shortURL",
+        "dest": "/server.js"
+      },
+      {
+        "src": "/update/:id",
+        "dest": "/server.js"
+      },
+      {
         "src": "/(.*)",
-        "dest": "/"
+        "dest": "/server.js"
       }
     ]
-}
+  }
+  
